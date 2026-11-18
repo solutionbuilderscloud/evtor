@@ -244,6 +244,7 @@ h2 { font: 600 clamp(28px, 3.6vw, 56px)/1.06 var(--tipo); letter-spacing: -0.035
 .vista .etapas li:first-child { transition-delay: 0.1s; }
 
 @media (max-width: 900px) {
+  .tem3d .fundo3d { inset: 64px 0 auto; height: 48%; } /* área só do pneu, entre o topo e o texto */
   .anima .fundo-passo { inset: 0; width: 100%; }
   .anima .fundo-passo.ativo { opacity: 0.3; }
   .fichas, .leitura { max-width: none; }
