@@ -58,7 +58,7 @@ function contar(el) {
 }
 
 // ---------- Pitch: pneu em camadas, seu carro e pontos ----------
-const LIMAO = { luz: 0xd4ff1f, pinca: 0x9dbd17 };
+const LIMAO = { luz: 0xd4ff1f };
 const tem3d = !calmo && typeof EVTOR3D !== "undefined"; // sem 3D ficam as fotos
 
 if (tem3d && $("pneuCamadas")) {
@@ -77,16 +77,6 @@ if (tem3d && $("pneuCamadas")) {
 if ($("fichas")) {
   const porMedida = Object.fromEntries(E.medidas.map((m) => [m.medida, m]));
   const carros = E.veiculos.filter((v) => v.acum || v.out).sort((a, b) => (b.acum || b.out * 10) - (a.acum || a.out * 10));
-  let pneu = null;
-  if (tem3d) {
-    $("carro").classList.add("tem3d");
-    try {
-      pneu = EVTOR3D.montar($("pneuCarro"), { tom: LIMAO, pose: [-1.12, 6.6, 0, 0] });
-    } catch (erro) {
-      $("carro").classList.remove("tem3d");
-      console.warn("Sem WebGL: o seu carro segue sem o pneu 3D.", erro);
-    }
-  }
   const escolher = (i) => {
     const v = carros[i], [medida, outra] = v.medidas, m = porMedida[medida];
     document.querySelectorAll("#fichas button").forEach((b, j) => b.setAttribute("aria-pressed", j === i));
@@ -94,7 +84,6 @@ if ($("fichas")) {
     $("leitura").innerHTML = `<p class="numero">${medida}</p>
       <p class="dito">${v.marca} ${v.modelo}. ${vendas}. Pneu EVTOR ${E.linhas[m.linha].nome}, índice ${m.indice}.
       <em>${outra ? `Outra versão usa ${outra}. ` : ""}${v.conf === "ok" ? "" : "Medida a confirmar no manual."}</em></p>`;
-    pneu?.vestir(m.linha, `${medida} ${m.indice}`);
   };
   $("fichas").innerHTML = carros.map((v, i) => `<button type="button" data-i="${i}">${v.modelo}</button>`).join("");
   $("fichas").addEventListener("click", (e) => e.target.dataset.i && escolher(+e.target.dataset.i));
@@ -132,7 +121,8 @@ if ($("pontos") && !calmo) {
         g.beginPath(); g.arc(x + (Math.floor(i / fileiras) + 0.5) * lado, H - pe - ((i % fileiras) + 0.5) * lado, lado * 0.34 * (0.6 + 0.4 * a), 0, 7); g.fill();
       }
       g.globalAlpha = Math.min(surge * 2, 1) * apagado;
-      g.fillText(b.nome, x, H - pe + 12); g.globalAlpha *= 0.6; g.fillText(nf(b.pneus), x, H - pe + 29);
+      const tx = Math.min(x, W - g.measureText(b.nome).width); // o último rótulo não sai da tela
+      g.fillText(b.nome, tx, H - pe + 12); g.globalAlpha *= 0.6; g.fillText(nf(b.pneus), tx, H - pe + 29);
       x += (Math.ceil(b.n / fileiras) + vao) * lado;
     });
     g.globalAlpha = 1;

@@ -209,16 +209,15 @@ h2 { font: 600 clamp(28px, 3.6vw, 56px)/1.06 var(--tipo); letter-spacing: -0.035
 .anima .foto > img, .anima .fundo-passo { animation: respira 22s ease-in-out infinite alternate; }
 @keyframes respira { to { scale: 1.09; } }
 
-#pneuCarro, .fundo3d { display: none; }
-.tem3d #pneuCarro { display: block; position: absolute; inset: 0 0 0 46%; z-index: -1; width: 54%; height: 100%; transform: none !important; cursor: grab; }
+.fundo3d { display: none; }
 .carro { background: radial-gradient(40% 56% at 73% 50%, rgba(212, 255, 31, 0.08), rgba(212, 255, 31, 0) 70%), var(--asfalto); }
 .carro .sobre { margin-bottom: 28px; }
-.fichas { display: flex; flex-wrap: wrap; gap: 8px; max-width: 46%; }
+.fichas { display: flex; flex-wrap: wrap; gap: 8px; max-width: 62%; }
 .fichas button { font: 500 13px/1 var(--tipo); color: #C9CEBD; background: none; border: 1px solid #3A3E31; border-radius: 99px; padding: 9px 13px; cursor: pointer; transition: color 0.2s, border-color 0.2s, background 0.2s; }
 .fichas button:hover { color: var(--cal); border-color: var(--cal); }
 .fichas button[aria-pressed="true"] { background: var(--volt); border-color: var(--volt); color: #0A0C05; font-weight: 700; }
-.leitura { max-width: 50%; margin-top: clamp(32px, 6svh, 64px); }
-.leitura .numero { font-size: min(11.5vw, 26svh); }
+.leitura { margin-top: clamp(32px, 6svh, 64px); }
+.leitura .numero { font-size: min(19vw, 40svh); }
 .leitura .dito { margin-top: 28px; }
 .leitura em { font-style: normal; color: var(--fumo); }
 
@@ -230,7 +229,7 @@ h2 { font: 600 clamp(28px, 3.6vw, 56px)/1.06 var(--tipo); letter-spacing: -0.035
 #pontos { display: none; }
 .anima #pontos { display: block; position: absolute; left: var(--lado); right: var(--lado); top: 176px; height: calc(100% - 176px - 268px); width: calc(100% - 2 * var(--lado)); opacity: 0; transition: opacity 0.5s; }
 .anima .ve-pontos #pontos { opacity: 1; }
-.anima .pontos .passo.baixo { position: absolute; left: var(--lado); bottom: 96px; }
+.anima .pontos .passo.baixo { position: absolute; left: var(--lado); right: var(--lado); bottom: 96px; }
 .anima .pontos .sobre { position: absolute; top: 128px; margin: 0; }
 .anima .pontos .passo.baixo .dito { margin: 0 0 8px; }
 .pontos .palco { padding-bottom: 96px; }
@@ -248,9 +247,7 @@ h2 { font: 600 clamp(28px, 3.6vw, 56px)/1.06 var(--tipo); letter-spacing: -0.035
   .anima .fundo-passo { inset: 0; width: 100%; }
   .anima .fundo-passo.ativo { opacity: 0.3; }
   .fichas, .leitura { max-width: none; }
-  .tem3d #pneuCarro { inset: auto 0 0 0; width: 100%; height: 42%; opacity: 0.5 !important; }
-  .carro { justify-content: flex-start; }
-  .leitura .numero { font-size: 17vw; }
+  .leitura .numero { font-size: 19vw; }
   .etapas { grid-template-columns: 1fr 1fr; }
   .etapas li::before { font-size: 18vw; }
   body { font-size: 16px; }
