@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -7 518 114" role="img" aria-label="EVTOR" color="#0A0C05">
+  <defs>
+    <mask id="corte" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120">
+      <rect x="-10" y="-10" width="120" height="120" fill="#fff"/>
+      <path id="fenda" d="M56 25L82.500 -2.400L86 -4.700L64.500 32.300Z" fill="#000"/>
+      <use href="#fenda" transform="rotate(180 50 50)"/>
+    </mask>
+    <g id="aro-raio">
+      <g mask="url(#corte)">
+        <circle cx="50" cy="50" r="39.500" fill="none" stroke="currentColor" stroke-width="21"/>
+        <path id="farpa" d="M64.500 32.300H74.500L69 25Z" fill="currentColor"/>
+        <use href="#farpa" transform="rotate(180 50 50)"/>
+      </g>
+    </g>
+  </defs>
+  <g fill="currentColor">
+    <path d="M0 0H83V25H30V36H80V60H30V72H88V100H0Z"/>
+    <path transform="translate(87)" d="M0 0H34L60.500 64L88 0H120L80 100H41Z"/>
+    <path transform="translate(211)" d="M0 0H90V25H59.500V100H28.500V25H0Z"/>
+    <path transform="translate(423)" fill-rule="evenodd" d="M0 0H58a34.500 34.500 0 0 1 15 65.600L95 100H60L40 69H30V100H0ZM30 25V44.500H52a9.750 9.750 0 0 0 0 -19.500Z"/>
+  </g>
+  <use href="#aro-raio" transform="translate(302 -6.500) scale(1.13)"/>
+</svg>
