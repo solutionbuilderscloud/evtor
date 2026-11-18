@@ -64,8 +64,9 @@ h2 { font: 600 clamp(28px, 3.6vw, 56px)/1.06 var(--tipo); letter-spacing: -0.035
 /* Abertura: o ícone se desenha e o raio corta o aro */
 #abre { background: radial-gradient(40% 36% at 50% 50%, #18220A 0%, var(--asfalto) 72%); }
 .icone { width: min(42vw, 230px); color: var(--volt); opacity: 1 !important; transform: none !important; filter: drop-shadow(0 0 46px rgba(212, 255, 31, 0.3)); }
-.icone .aro { stroke-dasharray: 1; }
-.anima .icone .aro { stroke-dashoffset: 1; animation: desenha 1.3s 0.3s var(--suave) forwards; }
+/* solda: terminado o desenho, o traço deixa de ser tracejado, senão sobra um fio na emenda do topo */
+.anima .icone .aro { stroke-dasharray: 1; stroke-dashoffset: 1; animation: desenha 1.3s 0.3s var(--suave) forwards, solda 0s 1.65s forwards; }
+@keyframes solda { to { stroke-dasharray: none; } }
 .anima .icone .fenda, .anima .icone .farpa { opacity: 0; animation: corta 0.22s 1.55s ease-out forwards; }
 .anima .icone { animation: pulsa 3.2s 2s ease-in-out infinite; }
 @keyframes desenha { to { stroke-dashoffset: 0; } }
