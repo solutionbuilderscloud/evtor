@@ -321,13 +321,13 @@ export function camadas(canvas, { tom = TOM, medida = "175/55 R16 80H" } = {}) {
   for (const c of partes) { c.brilho = 0; for (const m of c.pecas) { m.material.emissive = new THREE.Color(tom.luz); m.material.emissiveIntensity = 0; } }
 
   const camera = new THREE.PerspectiveCamera(26, 1, 0.1, 50);
-  let aberto = 0, alvoAberto = 0, ativo = -1, volta = 0, estreito = false;
+  let aberto = 0, alvoAberto = 0, ativo = -1, volta = 0, largo = true;
   function medir() {
     const w = canvas.clientWidth, h = canvas.clientHeight;
     renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
     renderer.setSize(w, h, false);
     camera.aspect = w / h; camera.updateProjectionMatrix();
-    estreito = w / h < 0.9;
+    largo = w / h > 1.3; // tela larga: texto à esquerda, pneu à direita. Senão o canvas é só do pneu e ele fica no centro
   }
   function laco() {
     requestAnimationFrame(laco);
@@ -344,10 +344,10 @@ export function camadas(canvas, { tom = TOM, medida = "175/55 R16 80H" } = {}) {
       }
     });
     pose.rotation.y = -0.95 + aberto * 0.2;
-    const dist = (5.4 + aberto * 2.4) * (estreito ? 1.5 : 1);
+    // recua até o conjunto caber na largura do canvas (2,3 fechado, 3,9 aberto), para nunca cortar nas bordas
+    const dist = Math.max(5.4 + aberto * 2.4, (2.3 + 1.6 * aberto) / (0.4618 * camera.aspect));
     camera.position.set(0, 0.5 * aberto, dist);
-    // no computador o pneu fica à direita do texto; no celular, em cima
-    camera.lookAt(estreito ? 0.16 * aberto : 0.16 * aberto - 0.165 * dist, estreito ? -0.1 * dist : 0, 0);
+    camera.lookAt(0.16 * aberto - (largo ? 0.165 * dist : 0), 0, 0);
     renderer.render(cena, camera);
   }
   addEventListener("resize", medir);

@@ -194,7 +194,8 @@ if (!calmo) {
       e.target.querySelectorAll("[data-conta]").forEach(contar);
       io.unobserve(e.target);
     }),
-    { threshold: 0.25 }
+    // sem threshold: uma seção mais alta que quatro telas (Marca no celular) nunca chega a 25% visível e ficava invisível
+    { rootMargin: "0px 0px -20% 0px" }
   );
   document.querySelectorAll(".tela, .secao").forEach((t) => io.observe(t));
 }
