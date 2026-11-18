@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVTOR — Logotipo</title>
+<style>
+  :root { --volt: #D4FF1F; --fundo: #050605; --fonte: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Helvetica Neue", sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #000; color: #F5F5F7; font: 400 15px/1.4 var(--fonte); -webkit-font-smoothing: antialiased; }
+  img { display: block; }
+  .quadro { position: relative; overflow: hidden; isolation: isolate; background: var(--fundo); }
+  /* grão, como em impressão */
+  .quadro::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0.22; mix-blend-mode: overlay;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .canto { position: absolute; z-index: 2; font-size: clamp(11px, 1vw, 15px); color: #D8DCD2; }
+  .se { top: 36px; left: 44px; } .sd { top: 36px; right: 44px; } .ie { bottom: 32px; left: 44px; } .id { bottom: 32px; right: 44px; }
+  .capa { min-height: 100svh; display: grid; place-items: center; background: radial-gradient(60% 50% at 50% 55%, #16200A 0%, var(--fundo) 70%); }
+  .capa img { width: min(72vw, 980px); filter: drop-shadow(0 0 60px rgba(212, 255, 31, 0.22)); }
+  .dupla { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 3px; }
+  .poster { aspect-ratio: 4 / 5; }
+  .poster .alto { position: absolute; inset: 12% 0 auto; display: grid; place-items: center; }
+  .poster .alto img { width: 34%; filter: drop-shadow(0 0 50px rgba(212, 255, 31, 0.3)); }
+  .painel { position: absolute; left: 0; top: 58%; width: 66%; height: 27%; background: var(--volt); display: grid; place-items: center; box-shadow: 0 0 90px 10px rgba(212, 255, 31, 0.55), 0 0 260px 60px rgba(212, 255, 31, 0.28); }
+  .painel img { width: 76%; }
+  .chao { position: absolute; inset: 85% 0 0; background: linear-gradient(180deg, rgba(212, 255, 31, 0.3), rgba(212, 255, 31, 0) 70%); filter: blur(18px); }
+  .cheio { background: var(--volt); display: grid; place-items: center; }
+  .cheio img { width: 64%; }
+  .cheio .canto { color: #0A0C05; }
+  .tamanhos { display: flex; align-items: center; gap: 56px; padding: 56px 44px; flex-wrap: wrap; margin-top: 3px; }
+  @media (max-width: 800px) { .dupla { grid-template-columns: 1fr; } .cheio { aspect-ratio: 4 / 3; } }
+</style>
+</head>
+<body>
+<section class="quadro capa">
+  <span class="canto se">Logotipo</span><span class="canto sd">EVTOR</span>
+  <img src="logo/evtor.svg" alt="EVTOR">
+  <span class="canto ie">2026</span><span class="canto id">Pneus para elétricos</span>
+</section>
+<div class="dupla">
+  <section class="quadro poster">
+    <span class="canto se">Símbolo</span><span class="canto sd">O aro e o raio</span>
+    <div class="alto"><img src="logo/evtor-simbolo.svg" alt="Símbolo EVTOR: aro de pneu cortado por um raio em negativo"></div>
+    <div class="chao"></div>
+    <div class="painel"><img src="logo/evtor-preto.svg" alt=""></div>
+  </section>
+  <section class="quadro cheio">
+    <span class="canto se">Negativo</span>
+    <img src="logo/evtor-preto.svg" alt="EVTOR em preto sobre limão">
+  </section>
+</div>
+<section class="quadro tamanhos" aria-label="Tamanhos pequenos">
+  <img src="logo/evtor.svg" alt="" width="260"><img src="logo/evtor.svg" alt="" width="140"><img src="logo/evtor.svg" alt="" width="72">
+  <img src="logo/evtor-simbolo.svg" alt="" width="64"><img src="logo/evtor-simbolo.svg" alt="" width="32"><img src="logo/evtor-simbolo.svg" alt="" width="16">
+</section>
+</body>
+</html>

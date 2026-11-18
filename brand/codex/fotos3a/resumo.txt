@@ -1,0 +1,7 @@
+Saved all three images in the current directory using the image generation tool:
+
+- `heroi.png`
+- `anatomia.png`
+- `torque.png`
+
+Verified each is PNG, 1024×1536. No other workspace files created.

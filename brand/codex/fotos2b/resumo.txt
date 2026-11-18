@@ -1,0 +1,3 @@
+Saved in the current directory: `flanco.png`, `pneu.png`, and `espaco.png`.
+
+All verified as 1024×1536 PNGs, generated with the image tool using your three scene prompts and logo reference.

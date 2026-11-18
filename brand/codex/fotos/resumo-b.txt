@@ -1,0 +1,5 @@
+Saved all three generated PNGs in the current directory:
+
+- `loja.png`
+- `outdoor.png`
+- `oficina.png`

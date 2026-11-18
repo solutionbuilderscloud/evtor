@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVTOR — Estudo de mercado</title>
+<meta name="description" content="Eletrificados no Brasil em 2026: volumes, modelos e medidas de pneu, com fontes.">
+<link rel="icon" href="logo/evtor-simbolo.svg">
+<link rel="stylesheet" href="pitch.css">
+</head>
+<body class="p-doc">
+
+<header class="topo">
+  <a href="index.html" aria-label="EVTOR, início"><img src="logo/evtor-claro.svg" alt="" width="83" height="18"></a>
+  <nav class="abas" aria-label="Camadas da apresentação">
+    <a href="index.html">Pitch</a><a href="marca.html">Marca</a><a href="estudo.html" aria-current="page">Estudo</a>
+  </nav>
+  <div class="barra" aria-hidden="true"><i id="avanco"></i></div>
+</header>
+
+<main>
+
+<section class="tela centro capa-doc">
+  <p class="sobre">Estudo de mercado</p>
+  <h1 class="enorme">Eletrificados no Brasil, 2026.</h1>
+  <p class="frase">Volumes, modelos e medidas de pneu. Levantamento de 15 de novembro de 2026, com números de reportagens que citam a ABVE.</p>
+</section>
+
+<section class="secao">
+  <h2 class="rotulo-secao">O tamanho</h2>
+  <dl class="fatos">
+    <div><dt>1.000.000</dt><dd>de eletrificados em circulação. Mais de um terço foi vendido em 2026.</dd></div>
+    <div><dt>17,7%</dt><dd>das vendas de veículos leves em outubro.</dd></div>
+    <div><dt>54 a 62 mil</dt><dd>emplacamentos em outubro. As duas bases publicadas divergem.</dd></div>
+    <div><dt>60 / 40</dt><dd>híbridos e elétricos puros, em porcentagem do total.</dd></div>
+    <div><dt>44%</dt><dd>do volume de outubro é da BYD.</dd></div>
+  </dl>
+</section>
+
+<section class="secao">
+  <h2 class="rotulo-secao">Os modelos<small>Emplacamentos de janeiro a outubro</small></h2>
+  <div>
+    <div class="ranking" id="barras" role="list"></div>
+    <p class="fonte"><span class="c-bev"></span>Elétrico <span class="c-hib"></span>Híbrido, HEV e PHEV somados. “A confirmar” indica medida ainda não conferida no manual do carro.</p>
+  </div>
+</section>
+
+<section class="secao">
+  <h2 class="rotulo-secao">A lacuna</h2>
+  <div>
+    <p class="numero" style="--t:13vw">175/55 R16</p>
+    <p class="dito">A medida do BYD Dolphin Mini não existia no Brasil quando o carro chegou. Os donos relatam dificuldade para repor.</p>
+    <dl class="fatos">
+      <div><dt id="miniVol">69.061</dt><dd>emplacados em dez meses</dd></div>
+      <div><dt id="miniOut">8.432</dt><dd>só em outubro</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="secao">
+  <h2 class="rotulo-secao">As medidas<small>Os seis modelos de maior volume</small></h2>
+  <div>
+    <p class="dito"><span id="nMedidas">9</span> medidas cobrem <span class="soma">241.253</span> carros.</p>
+    <div class="medidas" id="medidas"></div>
+  </div>
+</section>
+
+<section class="secao">
+  <h2 class="rotulo-secao">O que muda no pneu</h2>
+  <dl class="ficha">
+    <div><dt>Peso</dt><dd>A bateria exige índice de carga maior. Mesma medida com índice menor que o original pode reprovar o carro na vistoria.</dd></div>
+    <div><dt>Torque</dt><dd>O torque instantâneo acelera o desgaste. As estimativas publicadas vão de 20% a 30% a mais que no carro a combustão.</dd></div>
+    <div><dt>Ruído</dt><dd>Sem motor a combustão, o ruído de rolagem domina a cabine.</dd></div>
+    <div><dt>Autonomia</dt><dd>Menor resistência ao rolamento rende mais quilômetros por carga. O ganho real depende de calibragem e do motorista.</dd></div>
+    <div><dt>Etiqueta</dt><dd>O Inmetro classifica resistência ao rolamento, aderência no molhado e ruído externo.</dd></div>
+  </dl>
+</section>
+
+<section class="secao">
+  <h2 class="rotulo-secao">O portfólio<small><span id="gTotal">21</span> medidas em quatro linhas</small></h2>
+  <div>
+    <div id="linhasGrade"></div>
+    <p class="fonte">Rolamento, molhado e ruído são metas de projeto para a etiqueta do Inmetro, não resultados de ensaio. Índices de carga seguem a tabela ETRTO da medida.</p>
+  </div>
+</section>
+
+<section class="secao">
+  <h2 class="rotulo-secao">Limites do estudo</h2>
+  <ul class="lista">
+    <li>Medidas marcadas “a confirmar” vêm de fichas técnicas de terceiros. Devem ser conferidas no manual antes de encomendar molde.</li>
+    <li>Não há ranking por modelo para Argentina, Chile, Colômbia e Uruguai.</li>
+    <li>O acumulado do ano só está disponível para os três híbridos mais vendidos.</li>
+    <li>O ranking de híbridos soma versões HEV e PHEV do mesmo modelo.</li>
+  </ul>
+</section>
+
+<section class="secao">
+  <h2 class="rotulo-secao">Fontes</h2>
+  <ol class="lista fontes">
+      <li><a href="https://www.vrum.com.br/mercado/2026/11/7538038-os-10-carros-hibridos-mais-vendidos-do-brasil-haval-h6-dispara-na-ponta.html" target="_blank" rel="noopener">Vrum: os 10 híbridos mais vendidos, Haval H6 na ponta</a></li>
+      <li><a href="https://www.vrum.com.br/mercado/2026/11/7536613-top-10-os-carros-eletrificados-mais-vendidos-em-outubro-de-2026.html" target="_blank" rel="noopener">Vrum: top 10 eletrificados de outubro de 2026</a></li>
+      <li><a href="https://canaltech.com.br/carros/eletricos-mais-vendidos-byd-domina-e-geely-ex2-sai-do-podio-em-outubro/" target="_blank" rel="noopener">Canaltech: elétricos mais vendidos em outubro</a></li>
+      <li><a href="https://canalve.com.br/eletrificados-618-mil-emplacamentos-outubro/" target="_blank" rel="noopener">Canal VE: 61,8 mil emplacamentos em outubro</a></li>
+      <li><a href="https://canalve.com.br/carros-eletricos-hibridos-mais-vendidos-2026-veja-ranking/" target="_blank" rel="noopener">Canal VE: ranking de elétricos e híbridos 2026</a></li>
+      <li><a href="https://www.maisgoias.com.br/brasil/economia/byd-domina-ranking-dos-carros-eletricos-mais-vendidos-do-brasil-em-2026-veja-top-10/" target="_blank" rel="noopener">Mais Goiás: top 10 elétricos de 2026</a></li>
+      <li><a href="https://www.cnnbrasil.com.br/auto/carros-eletrificados-ja-representam-177-do-mercado-veja-os-mais-vendidos/" target="_blank" rel="noopener">CNN Brasil: eletrificados são 17,7% do mercado</a></li>
+      <li><a href="https://autopapo.com.br/curta/brasil-supera-1-milhao-de-carros-eletrificados-mais-de-um-terco-foi-vendido-em-2026/" target="_blank" rel="noopener">Autopapo: Brasil supera 1 milhão de eletrificados</a></li>
+      <li><a href="https://autopapo.com.br/curta/pneu-speedmax-byd-dolphin-mini" target="_blank" rel="noopener">Autopapo: pneu nacional para o Dolphin Mini</a></li>
+      <li><a href="https://garagem360.com.br/?p=311728" target="_blank" rel="noopener">Garagem360: donos do Dolphin Mini e a dificuldade com pneus</a></li>
+      <li><a href="https://garagem360.com.br/?p=322098" target="_blank" rel="noopener">Garagem360: índice de carga em pneu de elétrico</a></li>
+      <li><a href="https://autopapo.com.br/noticia/pneu-para-carro-eletrico/" target="_blank" rel="noopener">Autopapo: carro elétrico exige pneu mais forte</a></li>
+      <li><a href="https://www.pneus.org/pneu-greatwall-haval-h6" target="_blank" rel="noopener">Pneus.org: medidas do Haval H6</a></li>
+      <li><a href="https://www.pneufree.com.br/blog/post/pneu-haval-h6-gwm" target="_blank" rel="noopener">Pneufree: pneu original do Haval H6</a></li>
+      <li><a href="https://www.fichacompleta.com.br/carros/byd/song-pro-dm-i-1-5-2025" target="_blank" rel="noopener">FichaCompleta: BYD Song Pro DM-i</a></li>
+      <li><a href="https://www.motoragora.com.br/?p=143376" target="_blank" rel="noopener">Motor Agora: pneus do BYD Song Plus</a></li>
+      <li><a href="https://omecanico.com.br/toyota-corolla-cross-sai-de-fabrica-com-pneus-dunlop/" target="_blank" rel="noopener">O Mecânico: pneus do Corolla Cross</a></li>
+      <li><a href="https://autoentusiastas.com.br/2026/06/toyota-yaris-cross-hybrid/" target="_blank" rel="noopener">Autoentusiastas: Yaris Cross Hybrid</a></li>
+      <li><a href="https://autoentusiastas.com.br/2026/04/geely-ex5-em-i-estreia-no-brasil/" target="_blank" rel="noopener">Autoentusiastas: Geely EX5 EM-i</a></li>
+      <li><a href="https://www.webmotors.com.br/gwm/ora-5/2027" target="_blank" rel="noopener">Webmotors: GWM Ora 5</a></li>
+      <li><a href="https://canalve.com.br/ficha-tecnica/geely/tudo-sobre-ex2/" target="_blank" rel="noopener">Canal VE: Geely EX2</a></li>
+  </ol>
+</section>
+
+</main>
+
+<script src="data/evtor.js"></script>
+<script src="pitch.js"></script>
+</body>
+</html>

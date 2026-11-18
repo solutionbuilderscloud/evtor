@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVTOR — Pitch</title>
+<meta name="description" content="EVTOR: o pneu do carro elétrico. Proposta de marca para a América do Sul.">
+<link rel="icon" href="logo/evtor-simbolo.svg">
+<link rel="stylesheet" href="pitch.css">
+</head>
+<body class="p-pitch">
+
+<header class="topo">
+  <a href="index.html" aria-label="EVTOR, início"><img src="logo/evtor-claro.svg" alt="" width="83" height="18"></a>
+  <nav class="abas" aria-label="Camadas da apresentação">
+    <a href="index.html" aria-current="page">Pitch</a><a href="marca.html">Marca</a><a href="estudo.html">Estudo</a>
+  </nav>
+  <div class="barra" aria-hidden="true"><i id="avanco"></i></div>
+</header>
+
+<main>
+
+<section class="tela centro" id="abre" data-nome="Abertura" data-fala="Espere o raio cortar o aro. Diga o seu nome e uma frase: vim falar do pneu do carro elétrico.">
+  <svg class="icone" viewBox="0 0 100 100" role="img" aria-label="Símbolo EVTOR">
+    <defs>
+      <mask id="corte" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120">
+        <rect x="-10" y="-10" width="120" height="120" fill="#fff"/>
+        <path class="fenda" d="M56 25L82.5 -2.4L86 -4.7L64.5 32.3Z" fill="#000"/>
+        <path class="fenda" d="M56 25L82.5 -2.4L86 -4.7L64.5 32.3Z" fill="#000" transform="rotate(180 50 50)"/>
+      </mask>
+    </defs>
+    <g mask="url(#corte)">
+      <circle class="aro" cx="50" cy="50" r="39.5" fill="none" stroke="currentColor" stroke-width="21" pathLength="1" transform="rotate(-90 50 50)"/>
+      <path class="farpa" d="M64.5 32.3H74.5L69 25Z" fill="currentColor"/>
+      <path class="farpa" d="M64.5 32.3H74.5L69 25Z" fill="currentColor" transform="rotate(180 50 50)"/>
+    </g>
+  </svg>
+  <span class="canto ie">Proposta de marca · 2026</span><span class="canto id">Role ou use as setas</span>
+</section>
+
+<section class="tela centro" id="pergunta" data-nome="A pergunta" data-fala="Leia a pergunta e pare dois segundos. O motor mudou, a bateria mudou, o peso mudou. O pneu na loja é o mesmo.">
+  <h2 class="enorme">O carro mudou.<br>E o pneu?</h2>
+</section>
+
+<section class="tela foto abre" id="produto" data-nome="O produto" data-fala="EVTOR. Uma marca de pneus que só faz pneu para carro elétrico e híbrido.">
+  <img src="img/pitch/heroi.jpg" alt="Pneu preto em close, com um fio de luz limão no contorno da banda">
+  <span class="canto sd">Simulação</span>
+  <div class="legenda">
+    <h1><img src="logo/evtor.svg" alt="EVTOR" width="518" height="114"></h1>
+    <h2>Feito para o torque.</h2>
+    <p class="frase">O pneu do carro elétrico e híbrido.</p>
+  </div>
+</section>
+
+<section class="cena" id="dor" data-nome="A dor">
+  <div class="palco">
+    <img class="fundo-passo" data-passo="0" src="img/pitch/torque.jpg" alt="" loading="lazy">
+    <img class="fundo-passo" data-passo="1" src="img/pitch/peso.jpg" alt="" loading="lazy">
+    <p class="sobre">A dor</p>
+    <div class="passos">
+      <div class="passo" data-fala="O motor elétrico entrega o torque todo na saída. O pneu comum não foi feito para isso e acaba antes.">
+        <p class="palavra">Torque</p>
+        <p class="dito">Chega inteiro desde a saída. O pneu comum se gasta de 20% a 30% mais rápido.</p>
+      </div>
+      <div class="passo" data-fala="A bateria pesa. O pneu precisa de índice de carga maior. Com o índice errado, o carro reprova na vistoria.">
+        <p class="palavra">Peso</p>
+        <p class="dito">A bateria pede índice de carga maior. O pneu errado reprova o carro na vistoria.</p>
+      </div>
+      <div class="passo" data-fala="Esta é a medida do Dolphin Mini, o elétrico mais vendido do Brasil. Quando o carro chegou, esse pneu não existia aqui.">
+        <p class="numero" style="--t:19vw">175/55 R16</p>
+        <p class="dito">A medida do elétrico mais vendido do país não existia no Brasil quando o carro chegou.</p>
+      </div>
+    </div>
+    <p class="fonte rodape">Autopapo e Garagem360. Detalhes na camada Estudo. Fotos: simulação.</p>
+  </div>
+</section>
+
+<section class="tela carro" id="carro" data-nome="O seu carro" data-fala="Pergunte à sala: quem aqui tem carro elétrico ou híbrido? Clique no modelo da pessoa. Se ninguém tiver, fique no Dolphin Mini. Mostre a medida e o pneu com ela gravada.">
+  <canvas id="pneuCarro" aria-hidden="true"></canvas>
+  <p class="sobre">Qual é o seu carro?</p>
+  <div class="fichas" id="fichas" role="group" aria-label="Modelos eletrificados"></div>
+  <div class="leitura" id="leitura" aria-live="polite"></div>
+  <p class="fonte rodape">Emplacamentos: ABVE, 2026. Pneu: simulação em 3D, nenhum pneu foi fabricado.</p>
+</section>
+
+<section class="cena com-fundo lado" id="solucao" data-nome="A solução">
+  <div class="palco">
+    <canvas class="fundo3d" id="pneuCamadas" aria-hidden="true"></canvas>
+    <img class="fundo" src="img/pitch/anatomia.jpg" alt="Pneu em vista explodida, aberto em quatro camadas" loading="lazy">
+    <p class="sobre">A solução · Quatro camadas</p>
+    <div class="passos">
+      <div class="passo" data-fala="Primeira camada, a banda. Mais rígida, porque é onde o torque chega primeiro.">
+        <p class="palavra">Garra</p>
+        <p class="dito">Banda mais rígida e composto resistente à abrasão. É onde o torque chega primeiro.</p>
+      </div>
+      <div class="passo" data-fala="Segunda, o composto. Rola com menos perda: mais quilômetros por carga.">
+        <p class="palavra">Giro</p>
+        <p class="dito">Composto de baixa resistência ao rolamento. Mais quilômetros por carga.</p>
+      </div>
+      <div class="passo" data-fala="Terceira, a carcaça. Dimensionada para o peso da bateria.">
+        <p class="palavra">Fibra</p>
+        <p class="dito">Carcaça com índice de carga XL, dimensionada para o peso da bateria.</p>
+      </div>
+      <div class="passo" data-fala="Quarta, o silêncio. Sem motor para encobrir, o barulho do pneu é o barulho do carro.">
+        <p class="palavra">Calma</p>
+        <p class="dito">Blocos com passo variável e espuma acústica. O silêncio do elétrico, preservado.</p>
+      </div>
+    </div>
+    <p class="fonte rodape">Simulação. Especificação de projeto: nenhum pneu foi fabricado ou ensaiado.</p>
+  </div>
+</section>
+
+<section class="tela foto inv" id="prova" data-nome="Na rua" data-fala="O projeto parte da rua brasileira: chuva forte, buraco e guia.">
+  <img src="img/pitch/chuva.jpg" alt="Banda do pneu cortando uma lâmina de água, com gotas no ar" loading="lazy">
+  <span class="canto sd">Simulação</span>
+  <div class="legenda">
+    <h2>Desenhado para a rua brasileira.</h2>
+    <p class="frase">Chuva, buraco, guia e o peso da bateria entram no projeto desde a primeira linha.</p>
+  </div>
+</section>
+
+<section class="cena" id="numeros" data-nome="Os números">
+  <div class="palco">
+    <p class="sobre">Os números · Brasil, 2026</p>
+    <div class="passos">
+      <div class="passo" data-fala="Um milhão de carros eletrificados já rodam no Brasil.">
+        <p class="numero" style="--t:21vw"><span data-conta="1000000">1.000.000</span></p>
+        <p class="dito">de carros eletrificados já rodam no Brasil.</p>
+      </div>
+      <div class="passo" data-fala="Um em cada seis carros novos vendidos hoje é eletrificado.">
+        <p class="numero" style="--t:33vw"><span data-conta="17.7" data-casas="1">17,7</span>%</p>
+        <p class="dito">das vendas de carros novos. Um em cada seis.</p>
+      </div>
+      <div class="passo" data-fala="E o mercado é concentrado: seis modelos somam quase um quarto de milhão de carros em dez meses.">
+        <p class="numero" style="--t:27vw"><span id="nCarros" data-conta="241253">241.253</span></p>
+        <p class="dito">carros em apenas seis modelos, vendidos em dez meses.</p>
+      </div>
+    </div>
+    <p class="fonte rodape">Autopapo, CNN Brasil, Vrum e Canal VE, com dados da ABVE.</p>
+  </div>
+</section>
+
+<section class="cena volt pontos" id="expectativa" data-nome="A expectativa">
+  <div class="palco">
+    <canvas id="pontos" aria-hidden="true"></canvas>
+    <p class="sobre">A expectativa</p>
+    <div class="passos">
+      <div class="passo" data-fala="Quatro pneus por carro. É a primeira troca desses seis modelos. Deixe claro: é uma conta, não uma previsão de vendas.">
+        <p class="numero" style="--t:27vw"><span id="nPneus" data-conta="965012">965.012</span></p>
+        <p class="dito">pneus na primeira troca desses seis modelos. <span id="nMedidas">9</span> medidas atendem todos.</p>
+      </div>
+      <div class="passo baixo" data-fala="Cada ponto na tela são mil pneus. Um bloco por modelo.">
+        <p class="dito">Cada ponto são mil pneus. Um bloco para cada modelo.</p>
+      </div>
+      <div class="passo baixo" data-fala="Este bloco é só do Dolphin Mini. É a medida que não existia. É por ela que o piloto começa.">
+        <p class="dito"><b id="nMini">276.244</b> pneus só do Dolphin Mini. A medida dele não existia no Brasil quando o carro chegou.</p>
+      </div>
+    </div>
+    <p class="fonte rodape">Conta: quatro pneus por carro sobre os emplacamentos de janeiro a outubro de 2026. Não é previsão de vendas.</p>
+  </div>
+</section>
+
+<section class="tela foto inv" id="porque" data-nome="Por que nós" data-fala="A pergunta que vão fazer: e as marcas grandes? Elas têm uma linha elétrica no meio de centenas de produtos. A EVTOR só faz isso.">
+  <img src="img/pitch/tunel.jpg" alt="Carro elétrico em um túnel, com um fio de luz limão na parede" loading="lazy">
+  <span class="canto sd">Simulação</span>
+  <div class="legenda">
+    <h2>Elas fazem pneu para tudo. A EVTOR, só para o elétrico.</h2>
+    <p class="frase">As marcas grandes têm uma linha elétrica dentro de um catálogo de centenas de produtos. Aqui o catálogo inteiro começa pelo carro do cliente.</p>
+  </div>
+</section>
+
+<section class="tela plano" id="plano" data-nome="O plano" data-fala="Quatro passos, nesta ordem. Nada foi fabricado ainda: o piloto é o primeiro pneu de verdade.">
+  <p class="sobre">O plano</p>
+  <ol class="etapas">
+    <li><b>Marca</b>Registrar EVTOR no INPI, nas classes de pneus e de comércio.</li>
+    <li><b>Fábrica</b>Produção terceirizada. Cotação das dez medidas da primeira fase.</li>
+    <li><b>Homologação</b>Certificação do Inmetro e etiqueta de eficiência, antes de fechar o molde.</li>
+    <li><b>Piloto</b>Um lote de 175/55 R16 para donos de Dolphin Mini, em uma capital.</li>
+  </ol>
+</section>
+
+<section class="tela fecho" id="fecho" data-nome="Fecho" data-fala="Leia a frase. Diga o que você pede da sala. Pare e espere a primeira pergunta.">
+  <h2 class="enorme">Um milhão de carros eletrificados. Uma marca feita só para eles.</h2>
+  <nav class="saidas" aria-label="Continue">
+    <a href="marca.html"><span>Camada 2</span>A marca</a>
+    <a href="estudo.html"><span>Camada 3</span>O estudo</a>
+  </nav>
+  <img src="logo/evtor.svg" alt="EVTOR" width="518" height="114">
+</section>
+
+</main>
+
+<script src="data/evtor.js"></script>
+<script src="pneu3d.js"></script>
+<script src="pitch.js"></script>
+</body>
+</html>

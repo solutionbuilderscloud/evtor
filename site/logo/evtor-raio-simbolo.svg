@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="EVTOR" color="#D4FF1F">
+  <defs>
+    <mask id="corte" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120">
+      <rect x="-10" y="-10" width="120" height="120" fill="#fff"/>
+      <path d="M52 -8H68L59 42H72L38 108L45 56H32Z" fill="#000" stroke="#000" stroke-width="10" stroke-linejoin="miter" stroke-miterlimit="1.2"/>
+    </mask>
+    <g id="aro-raio">
+      <circle cx="50" cy="50" r="41" fill="none" stroke="currentColor" stroke-width="18" mask="url(#corte)"/>
+      <path d="M53 3H65L57.5 43.5H69.5L41.3 97L46.5 54.5H34Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    </g>
+  </defs>
+  <use href="#aro-raio"/>
+</svg>

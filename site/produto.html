@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVTOR — O pneu do carro elétrico</title>
+<meta name="description" content="EVTOR: pneus feitos para carros elétricos e híbridos. Mais silêncio, mais quilômetros por carga, pronto para o peso da bateria.">
+<link rel="icon" href="logo/evtor-symbol.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="global">
+  <a href="index.html" aria-label="EVTOR, apresentação"><img src="logo/evtor-wordmark-claro.svg" alt="" width="75" height="16"></a>
+  <nav aria-label="Site">
+    <a href="#linhas">Volt</a>
+    <a href="#linhas">Arco</a>
+    <a href="#linhas">Tera</a>
+    <a href="#linhas">Trilha</a>
+    <a href="catalogo.html">Catálogo técnico</a>
+    <a href="marca.html">Marca</a>
+  </nav>
+</header>
+
+<div class="produto-barra">
+  <strong>EVTOR</strong>
+  <nav aria-label="Nesta página">
+    <a href="#desempenho">Desempenho</a>
+    <a href="#por-dentro">Por dentro</a>
+    <a href="#seu-carro">Seu carro</a>
+  </nav>
+  <a class="botao" href="#reservar">Reservar</a>
+</div>
+
+<main id="conteudo">
+
+<section class="giro" id="desempenho" aria-label="EVTOR">
+  <div class="giro-palco">
+    <canvas id="pneu" aria-label="Pneu EVTOR em 3D. Arraste para girar."></canvas>
+    <div class="abre legenda ativa" data-de="0" data-ate="0.1">
+      <h1><img src="logo/evtor-wordmark-claro.svg" alt="EVTOR" width="470" height="100"></h1>
+      <p class="chamada">O pneu do carro elétrico.</p>
+      <p class="acoes"><a class="botao" href="#reservar">Reservar</a><a class="link" href="#seu-carro">Ver a medida do meu carro</a></p>
+    </div>
+    <div class="legenda" data-de="0.16" data-ate="0.4"><h2>Silêncio<br>que se ouve.</h2><p>Meta de 68 dB de ruído externo. Sem motor para encobrir, o pneu é o som do carro.</p></div>
+    <div class="legenda" data-de="0.46" data-ate="0.7"><h2>Mais chão<br>por carga.</h2><p>Meta de classe A em resistência ao rolamento. Menos energia perdida a cada volta.</p></div>
+    <div class="legenda" data-de="0.76" data-ate="1"><h2>Aguenta<br>a bateria.</h2><p>Carcaça reforçada XL nas medidas que pedem. O índice de carga certo para o seu carro.</p></div>
+  </div>
+</section>
+
+<section class="manifesto">
+  <p>Carro elétrico pesa mais. Arranca mais forte. E não tem motor para esconder o barulho do asfalto. <b>O pneu comum não foi feito para isso. EVTOR foi.</b></p>
+</section>
+
+<section class="claro" id="por-dentro">
+  <h2 class="titulo">Por dentro de um EVTOR.</h2>
+  <div class="bento">
+    <article class="b-corte escuro"><img id="fotoFlanco" alt="Flanco do pneu com o logotipo EVTOR em relevo"><div><h3>Quatro camadas.<br>Um trabalho cada.</h3><p>Banda, composto, carcaça e interior. Cada exigência do elétrico tem a sua resposta.</p></div></article>
+    <article class="b-num"><p class="num grad">68<small>dB</small></p><h3>Calma</h3><p>Blocos com passo variável quebram o zumbido de rolagem. Meta de ruído externo.</p></article>
+    <article class="b-num"><p class="num grad">A</p><h3>Giro</h3><p>Composto com sílica de baixa histerese. Meta de classe A em resistência ao rolamento.</p></article>
+    <article class="b-foto escuro"><img id="fotoBanda" alt="Banda de rodagem do EVTOR Volt vista de frente"><div><h3>Garra</h3><p>Banda mais rígida para o torque que chega inteiro desde a saída.</p></div></article>
+    <article class="b-num"><p class="num grad">XL</p><h3>Fibra</h3><p>Carcaça reforçada. Um plug-in leva de 200 a 400 kg a mais que o carro a combustão.</p></article>
+  </div>
+</section>
+
+<section class="carro" id="seu-carro">
+  <h2 class="titulo">Feito para o carro<br>que o Brasil escolheu.</h2>
+  <p class="apoio">Os eletrificados mais vendidos de 2026. Toque no seu.</p>
+  <div class="fichas" id="fichas" role="group" aria-label="Escolha o carro"></div>
+  <div class="leitura" id="leitura" aria-live="polite"></div>
+</section>
+
+<section class="claro usos">
+  <h2 class="titulo">Do aplicativo<br>à estrada de terra.</h2>
+  <div class="galeria" id="galeria" tabindex="0" aria-label="Usos reais"></div>
+</section>
+
+<section class="claro linhas" id="linhas">
+  <h2 class="titulo">Qual EVTOR é o seu?</h2>
+  <div class="comparar" id="comparar"></div>
+  <p class="rodape-nota">Rolamento, molhado e ruído são metas de projeto para a etiqueta do Inmetro. Os valores finais saem dos ensaios de homologação. <a href="catalogo.html#validacao">Como validamos</a></p>
+</section>
+
+<section class="reservar" id="reservar">
+  <h2><span class="grad">Reserve o seu.</span></h2>
+  <p>Os primeiros lotes saem por ordem de reserva. Escolha o carro e a gente avisa quando a sua medida chegar.</p>
+  <form id="reserva">
+    <label class="oculto" for="rCarro">Seu carro</label>
+    <select id="rCarro"></select>
+    <button class="botao grande" type="submit">Reservar</button>
+  </form>
+  <p class="miudo">Sem pagamento agora. Você recebe a confirmação por e-mail.</p>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <p>Marca em desenvolvimento. Especificações são metas de projeto, sujeitas à homologação. Pneu em modelo 3D ilustrativo. Nomes de veículos pertencem a seus fabricantes e aparecem só para indicar compatibilidade.</p>
+  <p><a href="catalogo.html">Catálogo técnico</a> · <a href="catalogo.html#medidas">Todas as medidas</a> · <a href="catalogo.html#uso">Calculadora de rodagem</a> · <a href="marca.html">Marca</a></p>
+  <p>EVTOR · Pneus para elétricos e híbridos · América do Sul</p>
+</footer>
+
+<script src="data/evtor.js"></script>
+<script src="pneu3d.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

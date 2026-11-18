@@ -1,0 +1,5 @@
+Created with the image-generation tool and saved in the current directory:
+
+- [evtor-1.png](evtor-1.png) — lime wordmark on black.
+- [evtor-2.png](evtor-2.png) — symbol poster with glowing lime panel.
+- [evtor-3.png](evtor-3.png) — black wordmark on lime.

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 100" role="img" aria-label="EVTOR">
+  <defs><clipPath id="c"><rect width="470" height="100"/></clipPath></defs>
+  <g clip-path="url(#c)" fill="none" stroke="#08201D" stroke-width="11" stroke-miterlimit="10">
+    <path d="M70 5.5H5.5V94.5H70M5.5 50H56"/>
+    <path d="M92 -10L130 92L168 -10"/>
+    <path d="M190 5.5H266M228 0V100"/>
+    <circle cx="326" cy="50" r="44.5" stroke-dasharray="256 23.6" transform="rotate(-30 326 50)"/>
+    <path d="M400.5 100V5.5H436a24.5 24.5 0 0 1 0 49H400.5M432 54L466 108"/>
+  </g>
+  <path d="M349 27L371 5" stroke="#12B5A8" stroke-width="7" fill="none"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="EVTOR" color="#D4FF1F">
+  <defs>
+    <mask id="corte" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120">
+      <rect x="-10" y="-10" width="120" height="120" fill="#fff"/>
+      <path id="fenda" d="M56 25L82.500 -2.400L86 -4.700L64.500 32.300Z" fill="#000"/>
+      <use href="#fenda" transform="rotate(180 50 50)"/>
+    </mask>
+    <g id="aro-raio">
+      <g mask="url(#corte)">
+        <circle cx="50" cy="50" r="39.500" fill="none" stroke="currentColor" stroke-width="21"/>
+        <path id="farpa" d="M64.500 32.300H74.500L69 25Z" fill="currentColor"/>
+        <use href="#farpa" transform="rotate(180 50 50)"/>
+      </g>
+    </g>
+  </defs>
+  <use href="#aro-raio"/>
+</svg>

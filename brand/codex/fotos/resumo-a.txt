@@ -1,0 +1,7 @@
+Saved all three PNGs in the current directory:
+
+- `pneu.png`
+- `carro.png`
+- `roda.png`
+
+Generated with the built-in image tool using your three scene prompts and supplied EVTOR logo reference.

@@ -1,0 +1,1 @@
+Saved `peso.png`, `buraco.png`, and `chuva.png` in the current directory. All verified as 1024×1536 PNGs, generated with the image tool using your prompts.

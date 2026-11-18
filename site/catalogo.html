@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVTOR — Pneus para elétricos e híbridos</title>
+<meta name="description" content="EVTOR: pneus feitos para carros elétricos e híbridos da América do Sul. Encontre a medida do seu carro.">
+<link rel="icon" href="logo/evtor-symbol.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400..700&family=Sora:wght@200..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo">
+  <a class="marca" href="index.html" aria-label="EVTOR, início"><img src="logo/evtor-wordmark-claro.svg" alt="" width="94" height="20"></a>
+  <nav aria-label="Principal">
+    <a href="#uso">Uso real</a>
+    <a href="#tecnologia">Tecnologia</a>
+    <a href="#linhas">Linhas</a>
+    <a href="#validacao">Validação</a>
+    <a href="#medidas">Medidas</a>
+    <a href="marca.html">Marca</a>
+  </nav>
+  <a class="botao pequeno" href="#busca">Encontrar meu pneu</a>
+</header>
+
+<main id="conteudo">
+
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="img/hero.jpg" aria-hidden="true"><source src="img/hero.mp4" type="video/mp4"></video>
+  <div class="hero-texto">
+    <p class="olho">Pneus para elétricos e híbridos</p>
+    <h1>Torque em <em>silêncio.</em></h1>
+    <p class="lide">Carro elétrico pesa mais, arranca mais forte e não tem motor para esconder o barulho do asfalto. A EVTOR faz o pneu para isso, nas medidas dos carros que a América do Sul está comprando.</p>
+
+    <div class="busca" id="busca">
+      <label for="carro">Qual é o seu carro?</label>
+      <select id="carro"></select>
+      <div id="resultado" class="resultado" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="faixa" aria-label="EVTOR em números">
+  <dl>
+    <div><dt>1 milhão+</dt><dd>eletrificados rodando no Brasil</dd></div>
+    <div><dt>20</dt><dd>modelos cobertos, dos mais vendidos de 2026</dd></div>
+    <div><dt>21</dt><dd>medidas, do aro 15 ao 19</dd></div>
+    <div><dt>4</dt><dd>linhas, por tipo de carro</dd></div>
+  </dl>
+</section>
+
+<section class="bloco" id="uso">
+  <p class="olho">Uso real</p>
+  <h2>Quem roda de elétrico no Brasil, e o que o pneu enfrenta</h2>
+  <p class="sub">Escolha o seu uso. O carro, a medida e a linha vêm junto.</p>
+  <div class="usos">
+    <div class="usos-abas" role="tablist" aria-label="Perfil de uso" id="usoAbas"></div>
+    <div class="uso" role="tabpanel" id="usoPainel" aria-live="polite"></div>
+  </div>
+
+  <div class="rodagem">
+    <div>
+      <h3>Quanto você roda?</h3>
+      <p>Ajuste para a sua rotina. A conta mostra de quanto em quanto tempo o pneu entra no seu orçamento.</p>
+      <label>Quilômetros por dia <output id="oKm"></output><input type="range" id="rKm" min="20" max="400" step="10"></label>
+      <label>Dias por semana <output id="oDias"></output><input type="range" id="rDias" min="1" max="7" step="1"></label>
+      <label>Quanto dura um jogo de pneus no seu carro <output id="oVida"></output><input type="range" id="rVida" min="15000" max="70000" step="5000" value="40000"></label>
+    </div>
+    <dl>
+      <div><dt id="sAno"></dt><dd>km por ano</dd></div>
+      <div><dt id="sMeses"></dt><dd>entre uma troca e outra</dd></div>
+      <div><dt id="sPneus"></dt><dd>pneus por ano</dd></div>
+    </dl>
+  </div>
+  <p class="nota">A duração do jogo é a que você informa: a EVTOR ainda não tem quilometragem de ensaio para publicar. Os valores iniciais de cada perfil são exemplos.</p>
+</section>
+
+<div class="esteira" aria-hidden="true"><div id="esteira"></div></div>
+
+<section class="bloco" id="conta">
+  <p class="olho">O problema</p>
+  <h2>O que o carro eletrificado cobra do pneu</h2>
+  <p class="sub">Três cargas que o pneu comum não foi projetado para levar.</p>
+  <div class="conta">
+    <article><p class="grande">+<span data-conta="400">400</span><small> kg</small></p><h3>Massa</h3><p>Um SUV plug-in leva de 200 a 400 kg a mais que o equivalente a combustão. Todo esse peso passa por quatro áreas do tamanho de uma mão.</p></article>
+    <article><p class="grande">+<span data-conta="30">30</span><small> %</small></p><h3>Desgaste</h3><p>O torque chega inteiro desde zero rpm. As estimativas publicadas apontam de 20% a 30% mais desgaste que no carro a combustão.</p></article>
+    <article><p class="grande"><span data-conta="0">0</span><small> dB</small></p><h3>Motor para encobrir</h3><p>Sem combustão, o ruído de rolagem é o som do carro. O que antes ficava escondido agora é o que o motorista ouve.</p></article>
+  </div>
+</section>
+
+<section class="anatomia" id="tecnologia">
+  <div class="anatomia-foto">
+    <img src="img/corte.jpg" alt="Pneu em corte, mostrando banda, cintas de aço, lonas da carcaça e espuma acústica interna" loading="lazy">
+    <p class="anatomia-passo" aria-hidden="true"><span id="passo">1</span> / 4</p>
+  </div>
+  <div class="anatomia-texto">
+    <p class="olho">Tecnologia</p>
+    <h2>De fora para dentro, quatro camadas</h2>
+    <p class="sub">Cada exigência do carro eletrificado tem uma resposta em uma camada do pneu.</p>
+    <ol id="tecnologias" class="camadas"></ol>
+  </div>
+</section>
+
+<section class="bloco" id="linhas">
+  <p class="olho">Linhas</p>
+  <h2>Quatro linhas, por tipo de carro</h2>
+  <p class="sub">Você escolhe pela carroceria. A medida certa já vem com o índice de carga que o carro eletrificado exige.</p>
+  <div id="cartoes" class="cartoes"></div>
+  <p class="nota">Rolamento, molhado e ruído são as metas de projeto para a etiqueta do Inmetro. Os valores finais saem dos ensaios de homologação.</p>
+</section>
+
+<section class="estrada">
+  <div>
+    <p class="olho">América do Sul</p>
+    <h2>Feito para as estradas daqui.</h2>
+    <p>Chuva de verão, serra, calor e buraco. O flanco é reforçado para o impacto, e o composto é calibrado para asfalto quente e molhado.</p>
+  </div>
+</section>
+
+<section class="bloco laboratorio" id="validacao">
+  <div>
+    <p class="olho">Validação</p>
+    <h2>O caminho até a etiqueta</h2>
+    <p class="sub">Nenhum número deste site vira promessa antes de passar por ensaio. Esta é a sequência, e onde estamos nela.</p>
+    <ol class="caminho">
+      <li class="feito"><b>Especificação</b><span>Medidas, índices de carga e metas de etiqueta por linha.</span></li>
+      <li><b>Protótipo</b><span>Primeiros pneus da fábrica parceira nas 10 medidas da fase 1.</span></li>
+      <li><b>Ensaio em tambor</b><span>Resistência ao rolamento, carga e velocidade em laboratório.</span></li>
+      <li><b>Pista e homologação</b><span>Frenagem no molhado, ruído de passagem e certificação Inmetro.</span></li>
+      <li><b>Piloto de rua</b><span>Frota de clientes medindo desgaste, consumo e ruído no uso real.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bloco" id="medidas">
+  <p class="olho">Medidas</p>
+  <h2>Os eletrificados mais vendidos do Brasil e o pneu de cada um</h2>
+  <p class="sub">Emplacamentos de 2026, dados ABVE. O portfólio EVTOR cobre todos os carros desta lista.</p>
+  <div class="filtros" role="group" aria-label="Filtrar por tipo">
+    <button type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+    <button type="button" data-filtro="BEV" aria-pressed="false">Elétricos</button>
+    <button type="button" data-filtro="hibrido" aria-pressed="false">Híbridos</button>
+  </div>
+  <div class="tabela-rolagem">
+    <table>
+      <thead><tr><th>Carro</th><th>Tipo</th><th class="num">Emplacados em 2026</th><th>Medida original</th><th>Linha EVTOR</th></tr></thead>
+      <tbody id="tabela"></tbody>
+    </table>
+  </div>
+  <p class="nota">* Medida a confirmar no manual ou na etiqueta da coluna da porta: varia por versão e ano. “jan–out” é o acumulado do ano; “out” é só outubro.</p>
+</section>
+
+<section class="bloco" id="flanco">
+  <p class="olho">Guia</p>
+  <h2>Como ler o pneu</h2>
+  <p class="sub">Tudo o que você precisa para trocar está escrito na lateral. No elétrico, os dois últimos códigos importam tanto quanto a medida.</p>
+  <ol class="codigo" aria-label="235/50 R19 103V XL">
+    <li><b>235</b><span>Largura da banda, em milímetros.</span></li>
+    <li><b>50</b><span>Altura da lateral: 50% da largura.</span></li>
+    <li><b>R19</b><span>Construção radial, roda aro 19.</span></li>
+    <li><b>103</b><span>Índice de carga: 875 kg por pneu. Nunca use menor que o original.</span></li>
+    <li><b>V</b><span>Índice de velocidade: até 240 km/h.</span></li>
+    <li><b>XL</b><span>Carcaça reforçada, para o peso da bateria.</span></li>
+  </ol>
+</section>
+
+<section class="bloco chamada">
+  <h2>Revenda EVTOR na sua região</h2>
+  <p class="sub">Estamos formando a rede de distribuidores e frotistas para o lançamento no Brasil, com Chile, Uruguai, Colômbia e Argentina na sequência.</p>
+  <a class="botao" href="mailto:contato@evtor.com.br?subject=Quero%20revender%20EVTOR">Falar com a EVTOR</a>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <img src="logo/evtor-wordmark-claro.svg" alt="EVTOR" width="113" height="24">
+  <p>Pneus para elétricos e híbridos · América do Sul</p>
+  <p>Marca em desenvolvimento. Especificações e disponibilidade sujeitas à homologação. Imagens ilustrativas. Nomes de veículos pertencem a seus fabricantes e aparecem só para indicar compatibilidade.</p>
+</footer>
+
+<script src="data/evtor.js"></script>
+<script src="catalogo.js"></script>
+</body>
+</html>
