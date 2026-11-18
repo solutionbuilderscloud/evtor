@@ -243,8 +243,7 @@ function quadro(p) {
 
 const fora = (canvas) => { const r = canvas.getBoundingClientRect(); return r.bottom < 0 || r.top > innerHeight; };
 
-// pose: [giro, distância, deslocamento lateral, descida] fixa, no lugar dos quadros do scroll
-export function montar(canvas, { medida = "195/60 R16 89H", parado = false, tom = TOM, pose: fixa = null } = {}) {
+export function montar(canvas, { medida = "195/60 R16 89H", parado = false, tom = TOM } = {}) {
   const renderer = novoRenderer(canvas);
   const { cena, roda, pose } = montarCena(renderer, "volt", medida, tom);
   const camera = new THREE.PerspectiveCamera(26, 1, 0.1, 50);
@@ -258,7 +257,7 @@ export function montar(canvas, { medida = "195/60 R16 89H", parado = false, tom 
     estreito = w / h < 0.9;
   }
   function desenhar() {
-    const [, yaw, dist, lado, desce] = fixa ? [0, ...fixa] : quadro(p);
+    const [, yaw, dist, lado, desce] = quadro(p);
     arrasto += (alvoArrasto - arrasto) * 0.08;
     pose.rotation.y = yaw + arrasto;
     roda.rotation.y = giro + p * 2.2;
@@ -282,10 +281,7 @@ export function montar(canvas, { medida = "195/60 R16 89H", parado = false, tom 
   medir();
   if (parado) desenhar(); else laco();
 
-  return {
-    progresso(v) { p = v; if (parado) desenhar(); },
-    vestir(linha, texto) { vestir(roda, linha, texto, tom); if (parado) desenhar(); },
-  };
+  return { progresso(v) { p = v; if (parado) desenhar(); } };
 }
 
 // ---------- Vista em camadas: o pneu se abre ao longo do eixo ----------
@@ -351,7 +347,7 @@ export function camadas(canvas, { tom = TOM, medida = "175/55 R16 80H" } = {}) {
     const dist = (5.4 + aberto * 2.4) * (estreito ? 1.5 : 1);
     camera.position.set(0, 0.5 * aberto, dist);
     // no computador o pneu fica à direita do texto; no celular, em cima
-    camera.lookAt(estreito ? 0.16 * aberto : 0.16 * aberto - 0.165 * dist, estreito ? -0.2 * dist : 0, 0);
+    camera.lookAt(estreito ? 0.16 * aberto : 0.16 * aberto - 0.165 * dist, estreito ? -0.1 * dist : 0, 0);
     renderer.render(cena, camera);
   }
   addEventListener("resize", medir);
